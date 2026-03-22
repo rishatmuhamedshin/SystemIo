@@ -1,12 +1,3 @@
 package by.rishat.ws.systemio.exception;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
-@Data
-@AllArgsConstructor
-public class FieldErrorDetail {
-    private String field;
-    private Object rejectedValue;
-    private String message;
-}
+public record FieldErrorDetail(String field, Object rejectedValue, String message) {}

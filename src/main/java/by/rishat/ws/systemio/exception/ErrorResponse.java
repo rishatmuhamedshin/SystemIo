@@ -1,14 +1,5 @@
 package by.rishat.ws.systemio.exception;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
-import java.time.LocalDateTime;
 
-@AllArgsConstructor
-@Data
-public class ErrorResponse {
-    private String code;
-    private String message;
-    private LocalDateTime timestamp;
-}
+public record ErrorResponse(String code, String message, java.time.LocalDateTime timestamp) {}
