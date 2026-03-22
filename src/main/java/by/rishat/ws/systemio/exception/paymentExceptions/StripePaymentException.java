@@ -1,6 +1,6 @@
-package by.rishat.ws.systemio.dto.customException.paymentExceptions;
+package by.rishat.ws.systemio.exception.paymentExceptions;
 
-import by.rishat.ws.systemio.dto.customException.ApiException;
+import by.rishat.ws.systemio.exception.ApiException;
 import org.springframework.http.HttpStatus;
 
 public class StripePaymentException extends ApiException {

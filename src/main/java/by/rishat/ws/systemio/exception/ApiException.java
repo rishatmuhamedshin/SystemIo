@@ -1,4 +1,4 @@
-package by.rishat.ws.systemio.dto.customException;
+package by.rishat.ws.systemio.exception;
 
 import org.springframework.http.HttpStatus;
 

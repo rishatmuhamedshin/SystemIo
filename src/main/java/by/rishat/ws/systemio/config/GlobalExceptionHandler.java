@@ -1,9 +1,9 @@
 package by.rishat.ws.systemio.config;
 
-import by.rishat.ws.systemio.dto.customException.ApiException;
-import by.rishat.ws.systemio.dto.customException.ErrorResponse;
-import by.rishat.ws.systemio.dto.customException.FieldErrorDetail;
-import by.rishat.ws.systemio.dto.customException.ValidationErrorResponse;
+import by.rishat.ws.systemio.exception.ApiException;
+import by.rishat.ws.systemio.exception.ErrorResponse;
+import by.rishat.ws.systemio.exception.FieldErrorDetail;
+import by.rishat.ws.systemio.exception.ValidationErrorResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
