@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-products
+      author: rishat
+      changes:
+        - insert:
+           tableName: products
+           columns:
+             - column: { name: name, value: "Iphone" }
+             - column: { name: price, value: 100.00 }
+        - insert:
+            tableName: products
+            columns:
+              - column: { name: name, value: "Наушники" }
+              - column: { name: price, value: 20.00 }
+        - insert:
+            tableName: products
+            columns:
+              - column: { name: name, value: "Чехол" }
+              - column: { name: price, value: 10.00 }

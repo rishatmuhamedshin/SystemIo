@@ -1,0 +1,12 @@
+databaseChangeLog:
+#   Создаем таблички
+  - include:
+      file: db/changelog/startApp/createTable/v1_create_products_table.yaml
+  - include:
+      file: db/changelog/startApp/createTable/v2_create_coupons_table.yaml
+
+#  Вносим данные
+  - include:
+      file: db/changelog/startApp/fillingData/v1_insert_products.yaml
+  - include:
+      file: db/changelog/startApp/fillingData/v2_insert_coupons.yaml.yaml

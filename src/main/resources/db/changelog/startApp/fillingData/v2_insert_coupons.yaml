@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-coupons
+      author: rishat
+      changes:
+        - insert:
+            tableName: coupons
+            columns:
+              - column: { name: code, value: "P10" }
+              - column: { name: discount_percent, value: 10.00 }
+        - insert:
+            tableName: coupons
+            columns:
+              - column: { name: code, value: "P100" }
+              - column: { name: discount_percent, value: 100.00 }
+        - insert:
+            tableName: coupons
+            columns:
+              - column: { name: code, value: "D15" }
+              - column: { name: discount_percent, value: 15.00 }
