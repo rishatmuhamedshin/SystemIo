@@ -25,3 +25,5 @@ databaseChangeLog:
                   constraints:
                     nullable: false
 
+        - sql:
+            sql: "ALTER TABLE coupons ADD CONSTRAINT chk_max_discount CHECK (discount_percent >= 0 AND discount_percent <= 99.99)"

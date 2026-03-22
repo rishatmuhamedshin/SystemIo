@@ -11,10 +11,10 @@ databaseChangeLog:
         - insert:
             tableName: coupons
             columns:
-              - column: { name: code, value: "P100" }
-              - column: { name: discount_percent, value: 100.00 }
+              - column: { name: code, value: "P75" }
+              - column: { name: discount_percent, value: 97.00 }
         - insert:
             tableName: coupons
             columns:
-              - column: { name: code, value: "D15" }
+              - column: { name: code, value: "P15" }
               - column: { name: discount_percent, value: 15.00 }

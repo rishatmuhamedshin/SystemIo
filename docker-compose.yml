@@ -6,15 +6,21 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: shop
+      POSTGRES_DB: shop_db
     ports:
       - "5432:5432"
 
   app:
     build: .
+    container_name: shop_app
     ports:
-      - "8337:8337"
+      - "8337:8080"
     depends_on:
       - db
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/shop
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/shop_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_LIQUIBASE_ENABLED: "true"
+    volumes:
+      - ./logs:/app/logs
