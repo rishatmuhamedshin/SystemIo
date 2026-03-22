@@ -1,6 +1,6 @@
 package by.rishat.ws.systemio.service.payment;
 
-import by.rishat.ws.systemio.dto.customException.PaypalPaymentException;
+import by.rishat.ws.systemio.dto.customException.paymentExceptions.PaypalPaymentException;
 import by.rishat.ws.systemio.service.PaymentService;
 import by.rishat.ws.systemio.service.payment.mock.Paypal;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ public class PaypalPaymentService implements PaymentService {
     private final Paypal paypal = new Paypal();
 
     @Override
-    public String getName(String name) {
+    public String getName() {
         return "paypalProcessor";
     }
 

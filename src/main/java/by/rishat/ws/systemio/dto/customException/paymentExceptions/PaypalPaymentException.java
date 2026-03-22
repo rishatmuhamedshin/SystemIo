@@ -1,5 +1,6 @@
-package by.rishat.ws.systemio.dto.customException;
+package by.rishat.ws.systemio.dto.customException.paymentExceptions;
 
+import by.rishat.ws.systemio.dto.customException.ApiException;
 import org.springframework.http.HttpStatus;
 
 public class PaypalPaymentException extends ApiException {

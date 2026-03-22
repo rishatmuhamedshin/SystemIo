@@ -1,6 +1,6 @@
 package by.rishat.ws.systemio.service.payment;
 
-import by.rishat.ws.systemio.dto.customException.StripePaymentException;
+import by.rishat.ws.systemio.dto.customException.paymentExceptions.StripePaymentException;
 import by.rishat.ws.systemio.service.PaymentService;
 import by.rishat.ws.systemio.service.payment.mock.StripePaymentProcessor;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ public class StripePaymentService implements PaymentService {
     private final StripePaymentProcessor stripePaymentProcessor = new StripePaymentProcessor();
 
     @Override
-    public String getName(String name) {
+    public String getName() {
         return "stripe";
     }
 
