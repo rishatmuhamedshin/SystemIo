@@ -16,17 +16,14 @@ public class PaymentOrchestrator {
 
     private final List<PaymentService> paymentServices;
 
-    public void executeRandom(BigDecimal amount) {
-        if (paymentServices.isEmpty()) {
-            throw new NoProcessorAvailable("Не найден платежный процессор");
-        }
+    public void execute(BigDecimal amount, String processorName) {
+        log.info("Запрос на оплату через: {}. Сумма: {}", processorName, amount);
 
-        //Берем рандомный сервис
-        int randomIndex = ThreadLocalRandom.current().nextInt(paymentServices.size());
-        PaymentService service = paymentServices.get(randomIndex);
+        PaymentService selectedService = paymentServices.stream()
+                .filter(service -> service.getName().equalsIgnoreCase(processorName))
+                .findFirst()
+                .orElseThrow(() -> new NoProcessorAvailable("Платежный процессор '" + processorName + "' не поддерживается"));
 
-        log.info("Выбрали рандомный сервис: {} с ценой: {}", service.getName(), amount);
-
-        service.process(amount);
+        selectedService.process(amount);
     }
 }

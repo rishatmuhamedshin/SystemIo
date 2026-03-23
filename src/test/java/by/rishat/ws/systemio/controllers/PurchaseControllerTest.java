@@ -66,9 +66,10 @@ class PurchaseControllerTest {
     }
 
     @Test
-    @DisplayName("Должен успешно выполнить покупку (200 OK)")
+    @DisplayName("Должен успешно выполнить покупку через выбранный процессор (200 OK)")
     void purchaseSuccess() throws Exception {
-        PurchaseRequest request = new PurchaseRequest(1, "IT12345678901", "P15", "paypal");
+        String processor = "paypal";
+        PurchaseRequest request = new PurchaseRequest(1, "IT12345678901", "P15", processor);
         BigDecimal calculatedPrice = new BigDecimal("85.00");
 
         when(priceService.calculate(anyInt(), anyString(), anyString()))
@@ -79,7 +80,7 @@ class PurchaseControllerTest {
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk());
 
-        verify(paymentOrchestrator).executeRandom(calculatedPrice);
+        verify(paymentOrchestrator).execute(eq(calculatedPrice), eq(processor));
     }
 
     @Test

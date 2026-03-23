@@ -68,7 +68,7 @@ public class PurchaseController {
                 request.getCouponCode()
         );
 
-        paymentOrchestrator.executeRandom(finalPrice);
+        paymentOrchestrator.execute(finalPrice, request.getPaymentProcessor());
 
         return ResponseEntity.ok().build();
     }
